@@ -32,38 +32,38 @@ local M = {
 }
 
 M.signs = {
-    Error = " ",
-    Warning = " ",
-    Hint = " ",
-    Information = " ",
+    Error = " ",
+    Warning = " ",
+    Information = " ",
+    Hint = " ",
 }
 
 M.lspKindIcons = {
-    Class = " (class)",
-    Color = " (color)",
-    Constant = " (constant)",
-    Constructor = " (constructor)",
-    Enum = " (enum)",
-    EnumMember = " (enum member)",
-    Event = " (event)",
-    Field = " (field)",
-    File = " (file)",
-    Folder = " (folder)",
-    Function = " (function)",
-    Interface = " (interface)",
-    Keyword = " (keyword)",
-    Method = " (method)",
-    Module = "{} (module)",
-    Operator = " (operator)",
-    Property = " (property)",
-    Reference = " (reference)",
-    Snippet = " (snippet)",
-    Struct = " (enum)",
-    Text = " (text)",
-    TypeParameter = " (type parameter)",
-    Unit = " (unit)",
-    Value = " (value)",
-    Variable = " (variable)",
+    Class = "", -- Class
+    Color = "", -- Color
+    Constant = "", -- Constant
+    Constructor = "", -- Constructor
+    Enum = "", -- Enum
+    EnumMember = "", -- EnumMember
+    Event = "", -- Event
+    Field = "ﰠ", -- Field
+    File = "", -- File
+    Folder = "", -- Folder
+    Function = "", -- Function
+    Interface = "ﰮ", -- Interface
+    Keyword = "", -- Keyword
+    Method = "", -- Method
+    Module = "", -- Module
+    Operator = "ﬦ", -- Operator
+    Property = "", -- Property
+    Reference = "", -- Reference
+    Snippet = "", -- Snippet
+    Struct = "", -- Struct
+    Text = "", -- Text
+    TypeParameter = "", -- TypeParameter
+    Unit = "塞", -- Unit
+    Value = "", -- Value
+    Variable = "", -- Variable
 }
 
 return M

@@ -8,7 +8,6 @@ lsp_signature.setup({
         border = "rounded",
     },
     floating_window_above_cur_line = false,
-    use_lspsaga = true,
     hint_prefix = " ",
     zindex = 50,
 })

@@ -1,5 +1,4 @@
 local api = vim.api
-local protocol = require("vim.lsp.protocol")
 
 local M = {}
 
@@ -43,44 +42,6 @@ M.on_attach = function(client, bufnr)
         ]])
     end
 end
-
--- TODO: Move from here
-protocol.CompletionItemKind = {
-    "", -- Text
-    "", -- Method
-    "", -- Function
-    "", -- Constructor
-    "", -- Field
-    "", -- Variable
-    "", -- Class
-    "ﰮ", -- Interface
-    "", -- Module
-    "", -- Property
-    "", -- Unit
-    "", -- Value
-    "", -- Enum
-    "", -- Keyword
-    "﬌", -- Snippet
-    "", -- Color
-    "", -- File
-    "", -- Reference
-    "", -- Folder
-    "", -- EnumMember
-    "", -- Constant
-    "", -- Struct
-    "", -- Event
-    "ﬦ", -- Operator
-    "", -- TypeParameter
-}
-
--- icon
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = true,
-    virtual_text = {
-        spacing = 4,
-        prefix = "",
-    },
-})
 
 -- Set up completion using nvim_cmp with LSP source
 local status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")

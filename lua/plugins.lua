@@ -31,6 +31,7 @@ return require("packer").startup(function(use)
     use("hrsh7th/cmp-path")
     use("hrsh7th/cmp-cmdline")
     use("hrsh7th/nvim-cmp")
+    use("rafamadriz/friendly-snippets") -- Snipets for many languages
 
     -- Tabout from parenthesis, used in cmp
     use({ "abecodes/tabout.nvim", wants = { "nvim-treesitter" } })

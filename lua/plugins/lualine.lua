@@ -2,6 +2,8 @@ local status, lualine = pcall(require, "lualine")
 if not status then
     return
 end
+local theme = require("theme")
+local signs = theme.signs
 
 lualine.setup({
     options = {
@@ -24,7 +26,7 @@ lualine.setup({
             {
                 "diagnostics",
                 sources = { "nvim_diagnostic" },
-                symbols = { error = " ", warn = " ", info = " ", hint = " " },
+                symbols = signs,
             },
             "diff",
             "encoding",

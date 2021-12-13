@@ -2,6 +2,8 @@ local status, tree = pcall(require, "nvim-tree")
 if not status then
     return
 end
+local theme = require("theme")
+local signs = theme.signs
 
 vim.g.nvim_tree_indent_markers = 1
 
@@ -14,12 +16,7 @@ tree.setup({
     },
     diagnostics = {
         enable = true,
-        icons = {
-            hint = "",
-            info = "",
-            warning = "",
-            error = "",
-        },
+        icons = signs,
     },
     filters = {
         custom = { "*.tmp", ".git" },

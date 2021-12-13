@@ -39,7 +39,10 @@ require("plugins.twilight")
 -- language specific
 require("plugins.go-nvim")
 
+require("luasnip/loaders/from_vscode").lazy_load()
+
 require("lsp.efm")
+require("icons")
 
 -- Coloscheme
 -- vim.cmd("colorscheme shocky")
