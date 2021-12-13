@@ -14,7 +14,7 @@ vim.g.maplocalleader = " " -- with <leader> eg. 'map <leader>n :new<cr>'
 -- p (normal): Paste code with indent
 -- jj (insert): Change to normal mode from insert mode
 -- t (terminal): Change to normal mode from terminal mode
--- <Leader>w (normal): Close current buffer
+-- <Leader>fw (normal): Close current buffer
 --
 --
 ----------------------------------------
@@ -76,6 +76,10 @@ end
 -- Center search result
 map("n", "n", "nzz", cmd_options)
 map("n", "N", "Nzz", cmd_options)
+
+-- Comment toggle
+map("n", "<leader>/", ":Commentary<CR>", options)
+map("v", "<leader>/", ":Commentary<CR>", options)
 
 -- Remember selection when indenting
 map("v", ">", ">gv", cmd_options)
@@ -172,7 +176,6 @@ if status then
         map("n", "gr", [[:lua require('telescope.builtin').lsp_references()<CR>]], cmd_options)
     end
 
-    map("n", "<leader>g", [[<Cmd>lua require("utils.core").git_hover()<CR>]], cmd_options)
     map("n", "<leader>eg", [[:lua require('telescope.builtin').symbols{ sources = {'gitmoji'} }<CR>]], cmd_options)
     map("n", "<leader>ee", [[:lua require('telescope.builtin').symbols{ sources = {'emoji'} }<CR>]], cmd_options)
 end
@@ -188,6 +191,7 @@ end
 status = pcall(require, "goto-preview")
 if status then
     map("n", "<Leader>z", [[<Cmd>lua require('goto-preview').goto_preview_definition()<CR>]], cmd_options)
+    map("n", "<Leader>fX", [[<Cmd>lua require('goto-preview').close_all_win()<CR>]], cmd_options)
 end
 
 -- Easymotion
@@ -203,5 +207,4 @@ map("n", "<C-l>", [[:TmuxNavigateRight<CR>]], cmd_options)
 map("n", "<C-\\>", [[:TmuxNavigatePrevious<CR>]], cmd_options)
 
 -- Choosewin
-
 map("n", "--", ':call feedkeys("\\<Plug>(choosewin)")<CR>', cmd_options)
