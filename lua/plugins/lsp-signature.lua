@@ -7,7 +7,7 @@ lsp_signature.setup({
     handler_opts = {
         border = "rounded",
     },
-    floating_window_above_cur_line = false,
+    floating_window_above_cur_line = true,
     hint_prefix = " ",
     zindex = 50,
 })

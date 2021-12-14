@@ -146,8 +146,8 @@ if status then
     map("n", "[d", [[:Lspsaga diagnostic_jump_prev<CR>]], cmd_options)
     map("n", "]d", [[:Lspsaga diagnostic_jump_next<CR>]], cmd_options)
 
-    map("n", "<leader>T", [[:Lspsaga open_floaterm<CR>]], cmd_options)
-    map("t", "<leader>T", [[<C-\><c-n>:Lspsaga close_floaterm<CR>]], cmd_options)
+    -- map("n", "<leader>T", [[:Lspsaga open_floaterm<CR>]], cmd_options)
+    -- map("t", "<leader>T", [[<C-\><c-n>:Lspsaga close_floaterm<CR>]], cmd_options)
 end
 
 -- Telescope
@@ -192,6 +192,17 @@ status = pcall(require, "goto-preview")
 if status then
     map("n", "<Leader>z", [[<Cmd>lua require('goto-preview').goto_preview_definition()<CR>]], cmd_options)
     map("n", "<Leader>fX", [[<Cmd>lua require('goto-preview').close_all_win()<CR>]], cmd_options)
+end
+
+-- ToggleTerm
+map("n", "<leader>T", ":ToggleTermToggleAll<CR>", cmd_options)
+function _G.set_terminal_keymaps()
+    vim.api.nvim_buf_set_keymap(0, "t", "<esc>", [[<C-\><C-n>]], options)
+    vim.api.nvim_buf_set_keymap(0, "t", "jj", [[<C-\><C-n>]], options)
+    vim.api.nvim_buf_set_keymap(0, "t", "<C-h>", [[<C-\><C-n><C-W>h]], options)
+    vim.api.nvim_buf_set_keymap(0, "t", "<C-j>", [[<C-\><C-n><C-W>j]], options)
+    vim.api.nvim_buf_set_keymap(0, "t", "<C-k>", [[<C-\><C-n><C-W>k]], options)
+    vim.api.nvim_buf_set_keymap(0, "t", "<C-l>", [[<C-\><C-n><C-W>l]], options)
 end
 
 -- Easymotion

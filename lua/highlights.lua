@@ -196,7 +196,7 @@ highlight({
     TSType = { guifg = base0A, gui = "italic" },
     TSTypeBuiltin = { guifg = base0E },
     TSVariable = { guifg = colors.beige },
-    TSVariableBuiltin = { guifg = base0E, "italic" },
+    TSVariableBuiltin = { guifg = colors.grey07, "italic" },
 
     -- TSDefinition = { gui = 'underline', guisp = base04 },
     -- TSDefinitionUsage = { gui = 'underline', guisp = base04 },

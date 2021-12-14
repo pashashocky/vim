@@ -40,3 +40,12 @@ augroup END
 ]],
     true
 )
+
+exec(
+    [[
+augroup SetTermMaps
+    autocmd! TermOpen term://* lua set_terminal_keymaps()
+augroup END
+]],
+    true
+)
