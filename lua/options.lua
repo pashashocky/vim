@@ -35,8 +35,6 @@ option.completeopt:remove("preview")
 
 -- Disable automatic comment propagation
 exec([[ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o ]], true)
--- Dynamic call to color column
-exec([[ call matchadd('ColorColumn', '\%81v', 100) ]], true)
 -- Hack indent-blankline
 -- https://github.com/lukas-reineke/indent-blankline.nvim/issues/59#issuecomment-806398054
 option.colorcolumn = "99999"

@@ -69,7 +69,7 @@ M.format = function()
         end
     end
 
-    vim.lsp.buf.formatting_sync(nil, 1000)
+    vim.lsp.buf.formatting_sync(nil, 10000)
 end
 
 M.range_format = function()

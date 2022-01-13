@@ -3,6 +3,13 @@ local M = {}
 
 M.lsp_gopls = {
     on_attach = lsp.on_attach,
+    settings = {
+        gopls = {
+            analyses = {
+                unusedparams = true,
+            },
+        },
+    },
     capabilities = lsp.capabilities,
 }
 

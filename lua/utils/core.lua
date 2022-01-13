@@ -19,9 +19,10 @@ function M.bufdelete()
 
     if bufnr ~= buffers[#buffers] then
         cmd("bprevious")
-    else
-        cmd("bnext")
+        -- else
+        --     cmd("bnext")
     end
+
     cmd("bdelete " .. bufnr)
 
     cmd("silent! ScrollViewDisable | bd " .. bufnr .. " | silent! ScrollViewEnable")

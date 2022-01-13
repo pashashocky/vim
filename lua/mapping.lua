@@ -172,8 +172,11 @@ if status then
     local goto_st = pcall(require, "goto-preview")
     if goto_st then
         map("n", "gr", [[<Cmd>lua require('goto-preview').goto_preview_references()<CR>]], cmd_options)
+        map("n", "gi", [[:lua require('telescope.builtin').lsp_implementations()<CR>]], cmd_options)
+        map("n", "gI", [[<Cmd>lua require('goto-preview').goto_preview_implementation()<CR>]], cmd_options)
     else
         map("n", "gr", [[:lua require('telescope.builtin').lsp_references()<CR>]], cmd_options)
+        map("n", "gi", [[:lua require('telescope.builtin').lsp_implementations()<CR>]], cmd_options)
     end
 
     map("n", "<leader>eg", [[:lua require('telescope.builtin').symbols{ sources = {'gitmoji'} }<CR>]], cmd_options)
