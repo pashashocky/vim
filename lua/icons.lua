@@ -7,7 +7,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
     underline = true,
     virtual_text = {
         spacing = 4,
-        prefix = "☠️",
+        prefix = "",
     },
 })
 
