@@ -6,6 +6,7 @@ local theme = require("theme")
 local signs = theme.signs
 
 vim.g.nvim_tree_indent_markers = 1
+vim.g.nvim_tree_respect_buf_cwd = 1
 
 tree.setup({
     open_on_setup = true,

@@ -60,6 +60,7 @@ return require("packer").startup(function(use)
     use("t9md/vim-choosewin") -- select vim windows like tmux, with --
     use("easymotion/vim-easymotion") -- quickly move around the file
     use("kyazdani42/nvim-tree.lua") -- File explorer
+    use("ygm2/rooter.nvim") -- Changes directory to the root of the project
 
     -- Git
     use({ -- Sidebar change signs for vim
