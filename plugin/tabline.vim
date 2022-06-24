@@ -42,4 +42,4 @@ function MyTabLabel(n)
   return len(label) == 0 ? '[No Name]' : label
 endfunction
 
-set tabline=%!MyTabLine()
+" set tabline=%!MyTabLine()

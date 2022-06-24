@@ -9,5 +9,5 @@ gitsigns.setup({
         change = { hl = "GitSignsChange", text = "▌" },
         delete = { hl = "GitSignsDelete", text = "▌" },
     },
-    current_line_blame = true,
+    current_line_blame = false,
 })

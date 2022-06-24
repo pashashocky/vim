@@ -32,10 +32,10 @@ local M = {
 }
 
 M.signs = {
-    Error = " ",
-    Warning = " ",
-    Information = " ",
-    Hint = " ",
+    error = " ",
+    warning = " ",
+    info = " ",
+    hint = " ",
 }
 
 M.lspKindIcons = {

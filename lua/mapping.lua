@@ -187,6 +187,7 @@ end
 status = pcall(require, "nvim-tree")
 if status then
     map("n", "<leader>b", [[:NvimTreeToggle<CR>]], cmd_options)
+    map("n", "<leader>B", [[:NvimTreeFocus<CR>]], cmd_options)
     map("n", "<leader>fq", [[:NvimTreeToggle<CR>]], cmd_options)
 end
 
@@ -209,11 +210,11 @@ function _G.set_terminal_keymaps()
 end
 
 -- Easymotion
-map("n", "s", ':call feedkeys("\\<Plug>(easymotion-overwin-f2)")<CR>', cmd_options)
+map("n", "s", ':call feedkeys("\\<Plug>(easymotion-overwin-f)")<CR>', cmd_options)
 map("n", "<leader>j", ':call feedkeys("\\<Plug>(easymotion-j)")<CR>', cmd_options)
 map("n", "<leader>k", ':call feedkeys("\\<Plug>(easymotion-k)")<CR>', cmd_options)
 
--- Tmux-navigato
+-- Tmux-navigation
 map("n", "<C-h>", [[:TmuxNavigateLeft<CR>]], cmd_options)
 map("n", "<C-j>", [[:TmuxNavigateDown<CR>]], cmd_options)
 map("n", "<C-k>", [[:TmuxNavigateUp<CR>]], cmd_options)

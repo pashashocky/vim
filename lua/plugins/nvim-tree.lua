@@ -5,9 +5,6 @@ end
 local theme = require("theme")
 local signs = theme.signs
 
-vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_respect_buf_cwd = 1
-
 tree.setup({
     open_on_setup = true,
     update_cwd = true,
@@ -27,4 +24,10 @@ tree.setup({
         side = "right",
         auto_resize = true,
     },
+    renderer = {
+        indent_markers = {
+            enable = true,
+        },
+    },
+    respect_buf_cwd = true,
 })
