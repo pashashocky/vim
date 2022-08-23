@@ -22,7 +22,7 @@ tree.setup({
     view = {
         width = 30,
         side = "right",
-        auto_resize = true,
+        adaptive_size = true,
     },
     renderer = {
         indent_markers = {

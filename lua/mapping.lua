@@ -21,7 +21,7 @@ vim.g.maplocalleader = " " -- with <leader> eg. 'map <leader>n :new<cr>'
 map("n", "<Enter>", "o<Esc>", options)
 map("n", "<leader><Enter>", "O<Esc>", options)
 map("i", "jj", "<Esc>", options)
-map("t", "<Esc>", "<C-\\><C-n>", options)
+map("t", "<Esc>", "<C-\\><C-n>", options) -- Terminal mode
 map("n", "<Leader>fw", [[<Cmd>lua require('utils.core').bufdelete()<CR>]], cmd_options)
 map("n", "<Leader>fx", ":q<CR>", cmd_options)
 
@@ -54,23 +54,27 @@ map("v", "k", "gk", options)
 map("n", "<leader>n", "<C-o>", options)
 map("n", "<leader>o", "<C-i>", options)
 
--- Tab Navigation
-map("n", "tt", "gt", options)
-map("n", "th", ":tabfirst<CR>", options)
-map("n", "tl", ":tablast<CR>", options)
-map("n", "te", ":tabedit<CR>", options)
-map("n", "tm", ":tabm<Space>", options)
-map("n", "td", ":tabclose<CR>", options)
-
 -- Buffer movement
 local status = pcall(require, "bufferline")
 if status then
+    map("n", "tt", ":BufferLineGoToBuffer<Space>", options)
     map("n", "tn", ":BufferLineCyclePrev<CR>", cmd_options)
     map("n", "to", ":BufferLineCycleNext<CR>", cmd_options)
     map("n", "td", [[<Cmd>lua require('utils.core').bufdelete()<CR>]], cmd_options)
+    -- Allow gf to open non-existing files
+    map("n", "gf", ":edit <cfile><CR>", options)
 else
+    map("n", "tt", "gt", options)
     map("n", "tn", ":tabprev<CR>", options)
     map("n", "to", ":tabnext<CR>", options)
+    map("n", "td", ":tabclose<CR>", options)
+
+    map("n", "th", ":tabfirst<CR>", options)
+    map("n", "tl", ":tablast<CR>", options)
+    map("n", "te", ":tabedit<CR>", options)
+    map("n", "tm", ":tabm<Space>", options)
+    -- Allow gf to open non-existing files
+    map("n", "gf", ":tabe <cfile><CR>", options)
 end
 
 -- Center search result
@@ -101,10 +105,6 @@ map("n", "<leader>R", [[:%s/\<<C-r>=expand('<cword>')<CR>\>/]], options)
 -- faster 'dot formula'
 map("n", "<leader>x", "*``cgn", options)
 map("n", "<leader>X", "#``cgN", options)
-
--- Allow gf to open non-existing files
-map("n", "gf", ":tabe <cfile><CR>", options)
-map("n", "gF", ":edit <cfile><CR>", options)
 
 -- Easy insertion of training characters from insert mode
 map("i", ",,", "<Esc>A,<Esc>", options)
