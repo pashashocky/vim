@@ -22,7 +22,8 @@ map("n", "<Enter>", "o<Esc>", options)
 map("n", "<leader><Enter>", "O<Esc>", options)
 map("i", "jj", "<Esc>", options)
 map("t", "<Esc>", "<C-\\><C-n>", options) -- Terminal mode
-map("n", "<Leader>fw", [[<Cmd>lua require('utils.core').bufdelete()<CR>]], cmd_options)
+-- map("n", "<Leader>fw", [[<Cmd>lua require('utils.core').bufdelete()<CR>]], cmd_options)
+map("n", "<Leader>fw", ":bp<bar>sp<bar>bn<bar>bd<CR>", cmd_options)
 map("n", "<Leader>fx", ":q<CR>", cmd_options)
 
 -- Previous tab/window/buffer
@@ -60,7 +61,8 @@ if status then
     map("n", "tt", ":BufferLineGoToBuffer<Space>", options)
     map("n", "tn", ":BufferLineCyclePrev<CR>", cmd_options)
     map("n", "to", ":BufferLineCycleNext<CR>", cmd_options)
-    map("n", "td", [[<Cmd>lua require('utils.core').bufdelete()<CR>]], cmd_options)
+    -- map("n", "td", [[<Cmd>lua require('utils.core').bufdelete()<CR>]], cmd_options)
+    map("n", "td", ":bp<bar>sp<bar>bn<bar>bd<CR>", cmd_options)
     -- Allow gf to open non-existing files
     map("n", "gf", ":edit <cfile><CR>", options)
 else
@@ -143,8 +145,8 @@ if status then
     map("v", "<leader>ca", [[:Lspsaga range_code_action<CR>]], cmd_options)
     map("n", "<leader>rn", [[:Lspsaga rename<CR>]], cmd_options)
 
-    map("n", "[d", [[:Lspsaga diagnostic_jump_prev<CR>]], cmd_options)
-    map("n", "]d", [[:Lspsaga diagnostic_jump_next<CR>]], cmd_options)
+    map("n", "<C-q>", [[:Lspsaga diagnostic_jump_prev<CR>]], cmd_options)
+    map("n", "<C-b>", [[:Lspsaga diagnostic_jump_next<CR>]], cmd_options)
 
     -- map("n", "<leader>T", [[:Lspsaga open_floaterm<CR>]], cmd_options)
     -- map("t", "<leader>T", [[<C-\><c-n>:Lspsaga close_floaterm<CR>]], cmd_options)
@@ -159,7 +161,7 @@ if status then
 
     map("n", "<leader>q", [[:lua require('telescope.builtin').buffers()<CR>]], cmd_options)
     map("n", "<leader>p", [[:lua require('telescope.builtin').find_files()<CR>]], cmd_options)
-    map("n", "<leader>P", [[:lua require('telescope.builtin').file_browser()<CR>]], cmd_options)
+    map("n", "<leader>P", [[:Telescope file_browser<CR>]], cmd_options)
     map("n", "<leader>a", [[:lua require('telescope.builtin').lsp_code_actions()<CR>]], cmd_options)
 
     -- Currently, these are the only mappings starting with `;`
@@ -167,7 +169,7 @@ if status then
     map("n", ";h", [[:lua require('telescope.builtin').help_tags()<CR>]], cmd_options)
     map("n", ";r", [[:lua require('telescope.builtin').live_grep()<CR>]], cmd_options)
     map("n", ";t", [[:lua require('telescope.builtin').lsp_document_symbols()<CR>]], cmd_options)
-    map("n", ";d", [[:lua require('telescope.builtin').lsp_document_diagnostics()<CR>]], cmd_options)
+    map("n", ";d", [[:lua require('telescope.builtin').diagnostics()<CR>]], cmd_options)
 
     local goto_st = pcall(require, "goto-preview")
     if goto_st then

@@ -12,4 +12,7 @@ lspsaga.init_lsp_saga({
     finder_definition_icon = " ",
     finder_reference_icon = " ",
     border_style = "round",
+    server_filetype_map = {
+        typescript = "typescript",
+    },
 })
