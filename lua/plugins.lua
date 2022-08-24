@@ -19,6 +19,9 @@ return require("packer").startup(function(use)
     use("neovim/nvim-lspconfig")
     use("tami5/lspsaga.nvim")
     use("ray-x/lsp_signature.nvim")
+    -- Use Neovim as a language server to inject
+    --LSP diagnostics, code actions, and more via Lua
+    use("jose-elias-alvarez/null-ls.nvim")
     use({
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
