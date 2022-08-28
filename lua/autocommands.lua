@@ -49,14 +49,3 @@ augroup END
 ]],
     true
 )
-
-exec(
-    [[
-augroup format_on_save
-    au!
-    au BufWritePre *.js,*.jsx,*.ts,*.tsx EslintFixAll
-    au BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 2000)
-augroup end
-]],
-    true
-)

@@ -43,6 +43,20 @@ M.on_attach = function(client, bufnr)
           augroup END
         ]])
     end
+
+    if client.name == "tsserver" then
+        client.resolved_capabilities.document_formatting = false
+        client.resolved_capabilities.document_range_formatting = false
+    end
+
+    if client.name == "efm" then
+        if client.resolved_capabilities.document_formatting then
+            vim.api.nvim_command([[augroup Format]])
+            vim.api.nvim_command([[autocmd! * <buffer>]])
+            vim.api.nvim_command([[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync({},1500)]])
+            vim.api.nvim_command([[augroup END]])
+        end
+    end
 end
 
 -- Set up completion using nvim_cmp with LSP source
