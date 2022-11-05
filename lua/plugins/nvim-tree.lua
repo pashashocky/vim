@@ -17,7 +17,7 @@ tree.setup({
         icons = signs,
     },
     filters = {
-        custom = { "*.tmp", ".git" },
+        custom = { "*.tmp", ".git/" },
     },
     view = {
         width = 30,

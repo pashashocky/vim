@@ -35,7 +35,7 @@ exec(
     [[
 augroup UpdateGlobal
     autocmd!
-    autocmd CursorHold,CursorHoldI * lua require'utils.lightbulb'.code_action()
+    autocmd CursorHold,CursorHoldI * silent! lua require'utils.lightbulb'.code_action()
 augroup END
 ]],
     true

@@ -43,7 +43,7 @@ telescope.setup({
         },
         file_ignore_patterns = {
             "dist/.*",
-            ".git",
+            ".git/",
             "node%_modules/.*",
             "tags",
             "target/",

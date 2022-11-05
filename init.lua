@@ -5,6 +5,9 @@
 --
 --   UPDATED on 11/12/2021
 --
+-- Great nvim resources
+-- https://github.com/Zulqarnain-cc34/dotfiles
+-- https://github.com/craftzdog/dotfiles-public/
 
 vim.opt.termguicolors = true
 
@@ -22,6 +25,7 @@ require("plugins.choosewin")
 require("plugins.cmp")
 require("plugins.colorizer")
 require("plugins.easymotion")
+require("plugins.gitgutter")
 require("plugins.gitsigns")
 require("plugins.goto")
 require("plugins.lsp-signature")

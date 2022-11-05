@@ -229,8 +229,13 @@ highlight({
 
     -- GitSign
     GitSignsAdd = { guifg = base0B, guibg = colors.background },
-    GitSignsChange = { guifg = base0D, guibg = colors.background },
+    GitSignsChange = { guifg = base0A, guibg = colors.background },
     GitSignsDelete = { guifg = base08, guibg = colors.background },
+
+    -- GitGutter
+    GitGutterAdd = { guifg = base0B, guibg = colors.background },
+    GitGutterChange = { guifg = base0A, guibg = colors.background },
+    GitGutterDelete = { guifg = base08, guibg = colors.background },
 
     TroubleNormal = { guibg = colors.dark_background },
 

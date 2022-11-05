@@ -63,7 +63,7 @@ end
 local status, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if status then
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+    M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 end
 
 return M

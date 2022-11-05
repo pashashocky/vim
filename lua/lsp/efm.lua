@@ -10,7 +10,7 @@ lspconfig.efm.setup({
     -- https://github.com/neovim/nvim-lspconfig/blob/master/lua/lspconfig/server_configurations/sumneko_lua.lua
     -- https://github.com/lithammer/nvim-lspconfig/blob/cb540d593f08a8f962828c95cc95fd63c650cd9f/lua/lspconfig/sumneko_lua.lua
     root_dir = function(fname)
-        return util.root_pattern(".git")() or util.path.dirname(fname)
+        return util.root_pattern(".git/")() or util.path.dirname(fname)
     end,
     filetypes = {
         "go",
@@ -18,6 +18,7 @@ lspconfig.efm.setup({
         "javascript",
         "javascript.jsx",
         "javascriptreact",
+        "json",
         "lua",
         "python",
         "scss",

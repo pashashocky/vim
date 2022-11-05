@@ -56,6 +56,8 @@ map("n", "<leader>n", "<C-o>", options)
 map("n", "<leader>o", "<C-i>", options)
 
 -- Buffer movement
+map("n", "ts", ":split<CR><C-w>w", cmd_options)
+map("n", "tv", ":vsplit<CR><C-w>w", cmd_options)
 local status = pcall(require, "bufferline")
 if status then
     map("n", "tt", ":BufferLineGoToBuffer<Space>", options)
@@ -63,6 +65,7 @@ if status then
     map("n", "to", ":BufferLineCycleNext<CR>", cmd_options)
     -- map("n", "td", [[<Cmd>lua require('utils.core').bufdelete()<CR>]], cmd_options)
     map("n", "td", ":bp<bar>sp<bar>bn<bar>bd<CR>", cmd_options)
+    map("n", "tD", "<C-w>c", cmd_options)
     -- Allow gf to open non-existing files
     map("n", "gf", ":edit <cfile><CR>", options)
 else
@@ -180,6 +183,11 @@ if status then
         map("n", "gr", [[:lua require('telescope.builtin').lsp_references()<CR>]], cmd_options)
         map("n", "gi", [[:lua require('telescope.builtin').lsp_implementations()<CR>]], cmd_options)
     end
+
+    -- Git commits
+    map("n", "<leader>gc", [[:lua require('telescope.builtin').git_commits()<CR>]], cmd_options)
+    map("n", "<leader>gb", [[:lua require('telescope.builtin').git_branches()<CR>]], cmd_options)
+    map("n", "<leader>gs", [[:lua require('telescope.builtin').git_status()<CR>]], cmd_options)
 
     map("n", "<leader>eg", [[:lua require('telescope.builtin').symbols{ sources = {'gitmoji'} }<CR>]], cmd_options)
     map("n", "<leader>ee", [[:lua require('telescope.builtin').symbols{ sources = {'emoji'} }<CR>]], cmd_options)

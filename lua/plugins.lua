@@ -14,6 +14,7 @@ end
 return require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
     use("tpope/vim-sensible")
+    use("tpope/vim-dispatch")
 
     -- IDE
     use("neovim/nvim-lspconfig")
@@ -73,6 +74,8 @@ return require("packer").startup(function(use)
     })
     use("tpope/vim-fugitive") -- additional git commands and repo management
     use("tpope/vim-rhubarb") -- Github hub
+    use("airblade/vim-gitgutter") -- gitgutter to unstage hunks
+    use("jreybert/vimagit")
 
     -- Decoration
     use("sheerun/vim-polyglot") -- Syntax highlighting for many languages
