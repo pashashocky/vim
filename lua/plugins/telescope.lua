@@ -33,10 +33,10 @@ end
 telescope.setup({
     defaults = {
         prompt_prefix = " 🔭 ",
-        layout_strategy = "vertical",
+        layout_strategy = "horizontal",
         layout_config = {
-            vertical = {
-                preview_height = 0.6,
+            horizontal = {
+                preview_width = 0.6,
                 height = 0.8,
                 width = 0.8,
             },
