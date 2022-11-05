@@ -6,6 +6,7 @@ end
 treesitter.setup({
     autopairs = { enable = true },
     autotag = { enable = true },
+    auto_install = true,
     highlight = { enable = true },
     indent = { enable = true },
     rainbow = {
@@ -22,6 +23,7 @@ treesitter.setup({
         "gomod",
         "html",
         "javascript",
+        "typescript",
         "json",
         "lua",
         "php",
