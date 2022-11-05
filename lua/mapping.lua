@@ -119,6 +119,12 @@ map("i", "::", "<Esc>A:<Esc>", options)
 map("n", "<leader>fi", [[:PackerInstall<CR>]], cmd_options)
 map("n", "<leader>fu", [[:PackerUpdate<CR>]], cmd_options)
 
+-- Git tools
+map("n", "<leader>gm", [[:Magit<CR>]], cmd_options)
+map("n", "<leader>gb", [[:G blame<CR>]], cmd_options)
+map("n", "<leader>gps", [[:Dispatch! git push<CR>]], cmd_options)
+map("n", "<leader>gpl", [[:Dispatch! git pull<CR>]], cmd_options)
+
 -- LspConfig
 status = pcall(require, "lspconfig")
 if status then
@@ -184,9 +190,9 @@ if status then
         map("n", "gi", [[:lua require('telescope.builtin').lsp_implementations()<CR>]], cmd_options)
     end
 
-    -- Git commits
+    -- Git tools
+    -- map("n", "<leader>gb", [[:lua require('telescope.builtin').git_branches()<CR>]], cmd_options)
     map("n", "<leader>gc", [[:lua require('telescope.builtin').git_commits()<CR>]], cmd_options)
-    map("n", "<leader>gb", [[:lua require('telescope.builtin').git_branches()<CR>]], cmd_options)
     map("n", "<leader>gs", [[:lua require('telescope.builtin').git_status()<CR>]], cmd_options)
 
     map("n", "<leader>eg", [[:lua require('telescope.builtin').symbols{ sources = {'gitmoji'} }<CR>]], cmd_options)
