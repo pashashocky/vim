@@ -18,7 +18,7 @@ null_ls.setup({
                 group = augroup_format,
                 buffer = 0,
                 callback = function()
-                    vim.lsp.buf.formatting_seq_sync()
+                    vim.lsp.buf.format()
                 end,
             })
         end

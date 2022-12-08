@@ -55,12 +55,12 @@ M.format = function()
         -- check if multiple clients, and if efm is setup
         for _, c1 in pairs(clients) do
             if c1.name == code_formatter then
-                c1.resolved_capabilities.document_formatting = true
+                c1.server_capabilities.document_formatting = true
                 -- if efm then disable others
                 for _, c2 in pairs(clients) do
-                    -- print(c2.name, c2.resolved_capabilities.document_formatting)
+                    -- print(c2.name, c2.server_capabilities.document_formatting)
                     if c2.name ~= code_formatter then
-                        c2.resolved_capabilities.document_formatting = false
+                        c2.server_capabilities.document_formatting = false
                     end
                 end
                 -- no need to contunue first loop
@@ -69,7 +69,7 @@ M.format = function()
         end
     end
 
-    vim.lsp.buf.formatting_sync(nil, 10000)
+    vim.lsp.buf.format(nil, 10000)
 end
 
 M.range_format = function()

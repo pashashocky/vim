@@ -31,7 +31,7 @@ M.on_attach = function(client, bufnr)
     -- Set in telescope in mappings.lua
     -- buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 
-    if client.resolved_capabilities.document_highlight then
+    if client.server_capabilities.document_highlight then
         vim.cmd([[
           hi LspReferenceRead cterm=bold ctermbg=236 guibg=#303030
           hi LspReferenceText cterm=bold ctermbg=236 guibg=#303030
@@ -45,12 +45,12 @@ M.on_attach = function(client, bufnr)
     end
 
     if client.name == "tsserver" then
-        client.resolved_capabilities.document_formatting = false
-        client.resolved_capabilities.document_range_formatting = false
+        client.server_capabilities.document_formatting = false
+        client.server_capabilities.document_range_formatting = false
     end
 
     if client.name == "efm" then
-        if client.resolved_capabilities.document_formatting then
+        if client.server_capabilities.document_formatting then
             vim.api.nvim_command([[augroup Format]])
             vim.api.nvim_command([[autocmd! * <buffer>]])
             vim.api.nvim_command([[autocmd BufWritePost <buffer> lua vim.lsp.buf.formatting_sync({},1500)]])
