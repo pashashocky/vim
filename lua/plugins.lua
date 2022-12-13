@@ -15,6 +15,16 @@ return require("packer").startup(function(use)
     use("wbthomason/packer.nvim")
     use("tpope/vim-sensible")
     use("tpope/vim-dispatch")
+    use({
+        "folke/which-key.nvim",
+        config = function()
+            require("which-key").setup({
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            })
+        end,
+    })
 
     -- IDE
     use("neovim/nvim-lspconfig")
