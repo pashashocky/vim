@@ -2,7 +2,11 @@ return {
   -- Default plugins
 
   ["goolord/alpha-nvim"] = {
-    disable = false,
+    rm_default_opts = true,
+    after = "base46",
+    config = function()
+      require "custom.plugins.alpha"
+    end,
   },
 
   ["folke/which-key.nvim"] = {
